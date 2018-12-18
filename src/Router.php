@@ -24,7 +24,6 @@ class Router
 
     public function checkRoute()
     {
-        dump($this->requestUri);
         if($this->queryString){
             $linkCorect = explode("?", $this->requestUri);
             $this->requestUri = $linkCorect[0];
@@ -44,6 +43,10 @@ class Router
             {
                 $this->checkGuard($newLink);
                 $this->callFunction($newLink,$idNr[0]);
+            }
+            else
+            {
+                echo "route not found";
             }
 
         }

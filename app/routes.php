@@ -11,5 +11,9 @@ $routes = [
     '/user/{id}' => ['controller' => 'UserController',
         'action' => 'showAction', 'guard'=> 'Authenticated'],
     '/user/index' =>['controller' => 'UserController',
-        'action' => 'index']
+        'action' => 'index'],
+    '/page/movies' => ['controller' => 'PageController',
+        'action' => 'viewMovieList'],
+    '/page/{id}'=>['controller' => 'PageController',
+        'action'=>'viewMovie']
 ];
