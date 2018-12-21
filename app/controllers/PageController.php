@@ -41,7 +41,8 @@ class PageController extends Controller
         $moviesString ="";
         foreach ($movieObjs as $mo)
         {
-            $moviesString.=$mo.'\n';
+            $newLine=nl2br("\n");
+            $moviesString.=$mo.$newLine;
         }
         return $this->view("page/movieList.html",["movies"=>$moviesString]);
     }

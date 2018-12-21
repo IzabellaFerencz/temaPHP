@@ -22,4 +22,16 @@ class UserController extends Controller
         return $this->view("user/index.html");
     }
 
+    // GET
+    public function login()
+    {
+        return $this->view("user/login.html");
+    }
+
+    // POST
+    public function login_post()
+    {
+
+    }
+
 }

@@ -15,5 +15,6 @@ $routes = [
     '/page/movies' => ['controller' => 'PageController',
         'action' => 'viewMovieList'],
     '/page/{id}'=>['controller' => 'PageController',
-        'action'=>'viewMovie']
+        'action'=>'viewMovie'],
+    '/auth/login' => ['controller' => 'UserController', 'action' => 'login']
 ];
