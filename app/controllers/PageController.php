@@ -24,27 +24,8 @@ class PageController extends Controller
         //dump($movie);
         $movies=$movie->getAll();
         dump($movies);
-        $i=0;
-        $movieObjs=array();
-        foreach ($movies as $m)
-        {
-            $mov = new Movie();
-            $mov->setId($m->Id);
-            $mov->setId($m->id);
-            $mov->setTitle($m->Title);
-            $mov->setDescription($m->Description);
-            $mov->setRating($m->Rating);
 
-            $movieObjs[$i] = $mov;
-            $i++;
-        }
-        $moviesString ="";
-        foreach ($movieObjs as $mo)
-        {
-            $newLine=nl2br("\n");
-            $moviesString.=$mo.$newLine;
-        }
-        return $this->view("page/movieList.html",["movies"=>$moviesString]);
+        return $this->view("page/movieList.html",["movies"=>$movies]);
     }
 
     public function viewMovie($id)
@@ -58,4 +39,13 @@ class PageController extends Controller
 
         return $this->view("page/movie.html",["movie" =>$movie]);
     }
+
+    public function rateMovie($id){
+        $newRating = $_POST['rating'];
+        bdump($newRating);
+        //save in db
+        //calculeaza noua medie
+        return json_encode(["rating" => 3.5]);
+
+}
 }

@@ -12,9 +12,12 @@ $routes = [
         'action' => 'showAction', 'guard'=> 'Authenticated'],
     '/user/index' =>['controller' => 'UserController',
         'action' => 'index'],
-    '/page/movies' => ['controller' => 'PageController',
+    '/movies' => ['controller' => 'PageController',
         'action' => 'viewMovieList'],
-    '/page/{id}'=>['controller' => 'PageController',
+    '/movies/{id}'=>['controller' => 'PageController',
         'action'=>'viewMovie'],
-    '/auth/login' => ['controller' => 'UserController', 'action' => 'login']
+    '/movies/rating/{id}'=>['controller' => 'PageController',
+        'action'=>'rateMovie'],
+    '/auth/login' => ['controller' => 'UserController',
+        'action' => 'login']
 ];
