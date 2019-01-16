@@ -19,11 +19,44 @@ class Movie extends Model
     protected $id;
     protected $Title;
     protected $Description;
-    protected $Rating;
+    protected $RatingSum;
+    protected $NrOfRatings;
 
     public function __toString()
     {
-        return $this->Title."-".$this->Description."-".$this->Rating;
+        return $this->Title."-".$this->Description."-".$this->RatingSum;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRatingSum()
+    {
+        return $this->RatingSum;
+    }
+
+    /**
+     * @param mixed $RatingSum
+     */
+    public function setRatingSum($RatingSum): void
+    {
+        $this->RatingSum = $RatingSum;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNrOfRatings()
+    {
+        return $this->NrOfRatings;
+    }
+
+    /**
+     * @param mixed $NrOfRatings
+     */
+    public function setNrOfRatings($NrOfRatings): void
+    {
+        $this->NrOfRatings = $NrOfRatings;
     }
 
     /**
@@ -72,22 +105,6 @@ class Movie extends Model
     public function setDescription($Description): void
     {
         $this->Description = $Description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRating()
-    {
-        return $this->Rating;
-    }
-
-    /**
-     * @param mixed $Rating
-     */
-    public function setRating($Rating): void
-    {
-        $this->Rating = $Rating;
     }
 
 
