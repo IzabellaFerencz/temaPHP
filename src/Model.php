@@ -104,8 +104,9 @@ abstract class Model
     /**
      *Insert new data in table
      */
-    public function new(array $data)
+    public function newUser($username, $password, $email)
     {
+
     }
 
     /**

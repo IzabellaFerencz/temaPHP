@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body {font-family: "Raleway", Arial, sans-serif}
+        .w3-row img {margin-bottom: -8px}
+    </style>
+</head>
+<body>
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+    <!-- Header -->
+    <header class="w3-container w3-xlarge w3-padding-24">
+        <a href="http://php.local/auth/login" class="w3-left w3-button w3-white">Log In</a>
+        <a href="http://php.local/movies/add" class="w3-right w3-button w3-white">Add movie</a>
+        <a href="http://php.local/movies" class="w3-right w3-button w3-white">View Movies</a>
+    </header>
+
+
+
+</div>
+
+<div class="w3-light-grey w3-padding-64 w3-center" id="home">
+    <form method="post" style="margin:auto;width:60%" action="http://php.local/auth/register" target="_blank">
+        <h3>Join us today to view the latest movies and find out what people think about them</h3>
+        <h4>If you believe that an important movie should be on our listing don't hesitate add movies by registering below.</h4>
+        <p class="w3-large w3-text-pink">Register here</p>
+        <div class="w3-section">
+            <label><b>Username</b></label>
+            <input class="w3-input w3-border" type="text" required name="username">
+        </div>
+        <div class="w3-section">
+            <label><b>Email</b></label>
+            <input class="w3-input w3-border" type="text" required name="email">
+        </div>
+        <div class="w3-section">
+            <label><b>Password</b></label>
+            <input class="w3-input w3-border" required name="password">
+        </div>
+        <button type="submit" class="w3-button w3-block w3-dark-grey">Register</button>
+    </form>
+
+</div>
+</body>
+</html>

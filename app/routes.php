@@ -6,8 +6,10 @@
  * Time: 10:37 AM
  */
 $routes = [
-    '/page/about-us' => ['controller' => 'PageController',
-        'action' => 'aboutUsAction'],
+    '/home' => ['controller' => 'PageController',
+        'action' => 'homeAction'],
+    '/movies/add' => ['controller' => 'PageController',
+        'action' => 'addActionForm'],
     '/user/{id}' => ['controller' => 'UserController',
         'action' => 'showAction', 'guard'=> 'Authenticated'],
     '/user/index' =>['controller' => 'UserController',
@@ -19,5 +21,9 @@ $routes = [
     '/movies/rating/{id}'=>['controller' => 'PageController',
         'action'=>'rateMovie'],
     '/auth/login' => ['controller' => 'UserController',
-        'action' => 'login']
+        'action' => 'login'],
+    '/auth/register' => ['controller' => 'UserController',
+        'action' => 'register'],
+    '/movies/addMovie' => ['controller' => 'PageController',
+        'action' => 'addMovie']
 ];

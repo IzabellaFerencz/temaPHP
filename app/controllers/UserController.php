@@ -7,6 +7,8 @@
  */
 namespace App\Controllers;
 use Framework\Controller;
+use App\models;
+
 
 class UserController extends Controller
 {
@@ -29,9 +31,16 @@ class UserController extends Controller
     }
 
     // POST
-    public function login_post()
+    public function register()
     {
-
+        $username=$_POST["username"];
+        $password=$_POST["password"];
+        $email=$_POST["password"];
+        $db=new models\User();
+        $db->newUser($username, $password, $email);
+        if($db){
+            return $this->view("user/success.html");
+        }
     }
 
 }

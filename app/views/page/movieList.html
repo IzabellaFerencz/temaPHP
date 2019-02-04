@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>Movie list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <style>
         .rating {
             display: inline-block;
@@ -70,14 +71,20 @@
             color: #000;
             text-shadow: 0 0 5px #09f;
         }
+        li {
+            padding: 0 0 50px 0;
+            display: inline-block;
+            background: url('https://vignette.wikia.nocookie.net/ideas/images/e/e4/Movie_night.jpg/revision/latest?cb=20141222232947') no-repeat bottom center;
+        }
     </style>
 </head>
 <body>
-
+<h1 class="text-center">Latest Movies</h1>
+</br>
 {% if movies|length > 0 %}
-<ul>
+<ul class="list-group">
     {% for movie in movies %}
-    <li >{{ movie.Title }}
+    <li class="list-group-item">{{ movie.Title }}
         <input type="hidden" value="{{movie.id}}" class="movie_id"/>
         <div >
            Description: {{movie.Description}}

@@ -12,10 +12,9 @@ use Framework\Controller;
 
 class PageController extends Controller
 {
-    public function aboutUsAction()
+    public function homeAction()
     {
-        $text="Hello";
-        echo $text;
+        return $this->view("page/homePage.html");
     }
 
     public function viewMovieList()
@@ -23,7 +22,6 @@ class PageController extends Controller
         $movie = new Movie();
         //dump($movie);
         $movies=$movie->getAll();
-        dump($movies);
 
         return $this->view("page/movieList.html",["movies"=>$movies]);
     }
@@ -48,4 +46,19 @@ class PageController extends Controller
         return json_encode(["rating" => 3.5]);
 
 }
+    public function addActionForm(){
+
+        return $this->view("page/addMovie.html");
+
+}
+    public function addMovie(){
+        $title=$_POST["title"];
+        $description=$_POST["description"];
+        $rating=$_POST["rating"];
+        $db=new Movie();
+        $db->addMovie($title, $description, $rating);
+        if($db){
+            return $this->view("page/success.html");
+        }
+    }
 }

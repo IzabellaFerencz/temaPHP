@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add movie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<h2 class="text-center">Add a movie</h2>
+</br>
+<form method="post" action="http://php.local/movies/addMovie">
+    <div class="form-group">
+        <label for="titleInput">Title</label>
+        <input type="text" name="title" class="form-control" id="titleInput">
+    </div>
+    <div class="form-group">
+        <label for="descriptionInput">Description</label>
+        <textarea name="description" class="form-control" id="descriptionInput" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="ratingInput">Rating</label>
+        <select class="form-control" id="ratingInput" name="rating">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="button btn" value="Submit">
+    </div>
+</form>
+</body>
+</html>

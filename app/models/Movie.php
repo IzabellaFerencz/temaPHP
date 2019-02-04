@@ -107,7 +107,13 @@ class Movie extends Model
         $this->Description = $Description;
     }
 
+    public function addMovie($title, $description, $rating){
+            $db = $this->newDbCon();
+            $db->query( "INSERT INTO movies (Title, Description, Rating) VALUES ('$title','$description','$rating')");
 
+            return true;
+
+    }
 
 
 }

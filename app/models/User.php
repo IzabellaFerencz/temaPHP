@@ -19,4 +19,14 @@ class User extends Model
     protected $username;
     protected $password;
     protected $email;
+
+    public function newUser($username, $password, $email){
+        $db = $this->newDbCon();
+        $db->query( "INSERT INTO users (username, password, email) VALUES ('$username','$password','$email')");
+
+        return true;
+    }
+
+
+    
 }
