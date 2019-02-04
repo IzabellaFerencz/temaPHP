@@ -20,6 +20,13 @@ class User extends Model
     protected $password;
     protected $email;
 
+    /**
+     * @param $username
+     * @param $password
+     * @param $email
+     * @return bool|void
+     * add a user to db
+     */
     public function newUser($username, $password, $email){
         $db = $this->newDbCon();
         $db->query( "INSERT INTO users (username, password, email) VALUES ('$username','$password','$email')");
@@ -27,6 +34,11 @@ class User extends Model
         return true;
     }
 
+    /**
+     * @param $username
+     * @return false|\PDOStatement
+     * get a user from db based on username
+     */
     public function getUser($username){
         $db=$this->newDbCon();
         $user= $db->query("SELECT * FROM users WHERE username='$username'");

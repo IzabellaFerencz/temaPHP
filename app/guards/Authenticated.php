@@ -14,6 +14,9 @@ use Framework\Guard;
 class Authenticated implements Guard
 {
 
+    /**
+     * @param array|null $params
+     */
     public function handle(array $params = null)
     {
         print("handle");

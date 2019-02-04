@@ -22,6 +22,13 @@ class Controller
         ));
     }
 
+    /**
+     * @param string $viewFile
+     * @param array $params
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function view(string $viewFile, array $params = [])
     {
         echo $this->twig->render($viewFile, $params);

@@ -13,6 +13,12 @@ class Router
     protected $requestUri;
     protected $queryString;
 
+    /**
+     * Router constructor.
+     * @param $routes
+     * @param $requestUri
+     * @param $queryString
+     */
     public function __construct($routes, $requestUri, $queryString)
     {
         $this->routes = $routes;
@@ -53,6 +59,10 @@ class Router
 
     }
 
+    /**
+     * @param $newLink
+     * @param null $id
+     */
     public function callFunction($newLink, $id=null)
     {
         $numeController=$this->routes[$newLink]["controller"];
@@ -66,6 +76,9 @@ class Router
 
     }
 
+    /**
+     * @param string $route
+     */
     private function checkGuard(string $route): void
     {
         if (isset($this->routes[$route]['guard'])) {

@@ -42,12 +42,19 @@ class UserController extends Controller
 //        return false;
 //
 //    }
+    /**
+     * show login window
+     */
     public function login()
     {
         return $this->view("user/login.html");
     }
 
     // POST
+
+    /**
+     * add new user/register
+     */
     public function register()
     {
         $username=$_POST["username"];

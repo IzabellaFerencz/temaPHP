@@ -12,11 +12,17 @@ use Framework\Controller;
 
 class PageController extends Controller
 {
+    /**
+     * show home page
+     */
     public function homeAction()
     {
         return $this->view("page/homePage.html");
     }
 
+    /**
+     * show movies
+     */
     public function viewMovieList()
     {
         $movie = new Movie();
@@ -25,6 +31,7 @@ class PageController extends Controller
 
         return $this->view("page/movieList.html",["movies"=>$movies]);
     }
+
 
     public function viewMovie($id)
     {
@@ -51,6 +58,10 @@ class PageController extends Controller
         return $this->view("page/addMovie.html");
 
 }
+
+    /**
+     * Add new movie
+     */
     public function addMovie(){
         $title=$_POST["title"];
         $description=$_POST["description"];
