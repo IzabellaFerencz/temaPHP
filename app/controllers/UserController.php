@@ -25,6 +25,23 @@ class UserController extends Controller
     }
 
     // GET
+//    public function loginAction()
+//    {
+//        $db=new models\User();
+//        $username=$_POST["username"];
+//        $password= $_POST["password"];
+//        $user=$db->getUser($username);
+//        if(isset($_POST["submit"])) {
+//
+//            foreach($user as $auth){
+//                if ($auth->username == $username && $auth->password == $password) {
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//
+//    }
     public function login()
     {
         return $this->view("user/login.html");
@@ -35,7 +52,7 @@ class UserController extends Controller
     {
         $username=$_POST["username"];
         $password=$_POST["password"];
-        $email=$_POST["password"];
+        $email=$_POST["email"];
         $db=new models\User();
         $db->newUser($username, $password, $email);
         if($db){

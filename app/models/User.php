@@ -27,6 +27,12 @@ class User extends Model
         return true;
     }
 
+    public function getUser($username){
+        $db=$this->newDbCon();
+        $user= $db->query("SELECT * FROM users WHERE username='$username'");
+        return $user;
+    }
+
 
     
 }

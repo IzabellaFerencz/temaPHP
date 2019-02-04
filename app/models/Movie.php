@@ -107,9 +107,22 @@ class Movie extends Model
         $this->Description = $Description;
     }
 
+    /**
+     * @param $title
+     * @param $description
+     * @param $inputRating
+     * @return bool
+     *
+     * in momentul in care adaug in tabel mr of ratings ar trebui sa fie by default 1, urmand ca acesta sa se actualizeze doar in
+     * momentul in care adauga cine rating
+     *
+     * rating sum va fi exact ratingul dat de cel care adauga, la fel el se va actualiza cand va mai da cineva review
+     */
     public function addMovie($title, $description, $rating){
             $db = $this->newDbCon();
-            $db->query( "INSERT INTO movies (Title, Description, Rating) VALUES ('$title','$description','$rating')");
+
+
+            $db->query( "INSERT INTO movies (Title, Description, RatingSum) VALUES ('$title','$description','$rating')");
 
             return true;
 

@@ -112,8 +112,12 @@ abstract class Model
     /**
      *Update data in table
      */
-    public function update(array $data)
+    public function update($table, $data, $id)
     {
+        $db=$this-> newDbCon();
+        $db->query("UPDATE $table SET $data WHERE $id");
+        return true;
+
     }
 
     /**
