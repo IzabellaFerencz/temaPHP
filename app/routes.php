@@ -9,7 +9,7 @@ $routes = [
     '/home' => ['controller' => 'PageController',
         'action' => 'homeAction'],
     '/movies/add' => ['controller' => 'PageController',
-        'action' => 'addActionForm'],
+        'action' => 'addActionForm', 'guard'=>'Authenticated'],
     '/user/{id}' => ['controller' => 'UserController',
         'action' => 'showAction', 'guard'=> 'Authenticated'],
     '/user/index' =>['controller' => 'UserController',
@@ -25,5 +25,7 @@ $routes = [
     '/auth/register' => ['controller' => 'UserController',
         'action' => 'register'],
     '/movies/addMovie' => ['controller' => 'PageController',
-        'action' => 'addMovie']
+        'action' => 'addMovie', 'guard'=>'Authenticated'],
+    '/user/login' =>['controller' => 'UserController',
+        'action' => 'loginUser']
 ];

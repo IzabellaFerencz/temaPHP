@@ -67,4 +67,19 @@ class UserController extends Controller
         }
     }
 
+    public function loginUser(){
+        $username=$_POST["username"];
+        $password=$_POST["password"];
+        $db=new models\User();
+        $user = $db->getUser($username);
+        if($user->fetchColumn(2) == $password){
+            session_start();
+            $_SESSION["username"]=$username;
+            echo "correct";
+        }
+        else{
+            echo "invalid username or password";
+        }
+    }
+
 }
