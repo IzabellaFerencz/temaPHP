@@ -8,7 +8,7 @@
 namespace App;
 
 class Config {
-    const ENV = "dev";
+    const ENV = "prod";
     CONST DB = [
         "host" => "localhost",
         "port" => 3306,

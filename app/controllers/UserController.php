@@ -60,8 +60,9 @@ class UserController extends Controller
         $username=$_POST["username"];
         $password=$_POST["password"];
         $email=$_POST["email"];
+        $passw=password_hash($password,PASSWORD_DEFAULT);
         $db=new models\User();
-        $db->newUser($username, $password, $email);
+        $db->newUser($username, $passw, $email);
         if($db){
             return $this->view("user/success.html");
         }
